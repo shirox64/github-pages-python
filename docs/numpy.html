@@ -36,7 +36,8 @@
 
     
     <link rel="index" title="索引" href="genindex.html" />
-    <link rel="search" title="検索" href="search.html" /> 
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="prev" title="コーディング規約" href="python_style.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -82,9 +83,46 @@
             
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="memorandum.html">備忘録</a></li>
 <li class="toctree-l1"><a class="reference internal" href="python_style.html">コーディング規約</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">NumPy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">NumPyとは</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">インポート</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">1次元配列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">2次元配列</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">変形</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">データ型</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id7">データ型一覧</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">データ型の指定</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id9">インデックスとスライス</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id10">データ再代入</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#copy">深いコピー(copy)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">数列を返す</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id12">配列の結合</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id13">水平方向に結合</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14">垂直方向に結合</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15">奥行き方向に結合</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id16">新しい列として結合</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id17">新しい行として結合</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id18">統計関数</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id19">和</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id20">積</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id21">累積和</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id22">累積積</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id23">平均</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id24">標準偏差</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id25">分散</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id26">最小</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id27">最大</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
             
@@ -728,6 +766,13 @@
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="python_style.html" class="btn btn-neutral float-left" title="コーディング規約" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
