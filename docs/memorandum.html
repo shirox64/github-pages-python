@@ -1,0 +1,312 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>備忘録 &mdash; python 1.0.0 ドキュメント</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="next" title="コーディング規約" href="python_style.html" />
+    <link rel="prev" title="Python" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> python
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">備忘録</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#mac">インストール方法(Mac)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#python">Pythonの真偽値の定義</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">多重ループ回避</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#json">json標準出力</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">jsonファイル出力</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#none">Noneの比較</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">Pythonはすべて参照渡し</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pandastips">pandasパフォーマンス維持のためのTIPS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#if-name-main">if <strong>name</strong> == '<strong>main</strong>':の下はグローバルスコープ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python_style.html">コーディング規約</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">python</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>備忘録</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/memorandum.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>備忘録<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="mac">
+<h2>インストール方法(Mac)<a class="headerlink" href="#mac" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>1.homebrewのインストール</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">bash</span> <span class="o">-</span><span class="n">c</span> <span class="s2">&quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)&quot;</span>
+</pre></div>
+</div>
+<p>2.Python3インストール</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">brew</span> <span class="n">install</span> <span class="n">python</span>
+</pre></div>
+</div>
+<p>3.Python3確認</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">v</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="python">
+<h2>Pythonの真偽値の定義<a class="headerlink" href="#python" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ul class="simple">
+<li><p>偽であると定義されている定数: NoneとFalse</p></li>
+<li><p>数値型におけるゼロ: 0, 0.0, 0j(複素数), Decimal(0), Fraction(0, 1)</p></li>
+<li><p>空のシーケンスまたはコレクション: '', (), [], {}, set(), range(0)</p></li>
+<li><p>上記以外のオブジェクトはすべてTrue判定</p></li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>多重ループ回避<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">years</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2010</span><span class="p">,</span> <span class="mi">2013</span><span class="p">)</span>
+<span class="n">integers</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">chars</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">year</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">char</span> <span class="ow">in</span> <span class="p">[(</span><span class="n">year</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">char</span><span class="p">)</span> <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">years</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">integers</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">chars</span><span class="p">]:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">char</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="json">
+<h2>json標準出力<a class="headerlink" href="#json" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="n">JSON_SAMPLE</span> <span class="o">=</span> <span class="s1">&#39;{&quot;_meta&quot;: {&quot;hash&quot;: {&quot;sha256&quot;: &quot;hash&quot;}, &quot;pipfile-spec&quot;: 6, &quot;requires&quot;: {&quot;python_version&quot;: &quot;3.6&quot;}, &quot;sources&quot;: [{&quot;name&quot;: &quot;pypi&quot;, &quot;url&quot;: &quot;https://pypi.python.org/simple&quot;, &quot;verify_ssl&quot;: true } ] } }&#39;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">JSON_SAMPLE</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>jsonファイル出力<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">test_file_path</span> <span class="o">=</span> <span class="s1">&#39;/XXX/YYY/ZZZ/&#39;</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">output_graph</span><span class="p">))</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">test_file_path</span> <span class="o">+</span> <span class="s1">&#39;result.json&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">result</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>※日本語含む場合 ensure_ascii=Falseを指定</p>
+</div>
+<div class="section" id="none">
+<h2>Noneの比較<a class="headerlink" href="#none" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>None との比較に == や != を利用しない。 is や is not を利用する。</p>
+</div>
+<div class="section" id="id4">
+<h2>Pythonはすべて参照渡し<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>※参照渡しでも書き換え可能なオブジェクトとcなオブジェクトが存在する。</p>
+<ul class="simple">
+<li><p>ミュータブルオブジェクト(書き換え可能)
+list, set, dict など</p></li>
+<li><p>イミュータブルオブジェクト(書き換え不可能)
+int, float, str, tuple など</p></li>
+</ul>
+</div>
+<div class="section" id="pandastips">
+<h2>pandasパフォーマンス維持のためのTIPS<a class="headerlink" href="#pandastips" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>行に対するループとDataFrame.applyは使わない。<br />pandas.DataFrameは内部的に同じ型の列をまとめてnp.ndarrayとして保持している。<br />列ごとに連続したデータを持つことになるため、行に対するループには向かない。<br />DataFrame.iterrows でのループの際には 異なる型を持つ列の値を Series として取り出すため、そのインスタンス化にも時間がかかる。<br />numpyを使った方が断然早い！！！<br />参考サイト : https://kunai-lab.hatenablog.jp/entry/2018/04/08/134924<br />applyメソッドも使用を避ける</p>
+</div>
+<div class="section" id="if-name-main">
+<h2>if <strong>name</strong> == '<strong>main</strong>':の下はグローバルスコープ<a class="headerlink" href="#if-name-main" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>if <strong>name</strong> == '<strong>main</strong>':の下で宣言した変数は、すべてグローバル変数になる！！<br />main関数でくるむことによってグローバルスコープの名前空間は汚染されない。またmain関数でくるむことにより、main処理を冒頭に書けるのでコードの見通しがよくなる。</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="python_style.html" class="btn btn-neutral float-right" title="コーディング規約" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 著作権 2020, shirox64
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

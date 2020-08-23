@@ -1,0 +1,432 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>コーディング規約 &mdash; python 1.0.0 ドキュメント</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" />
+    <link rel="prev" title="備忘録" href="memorandum.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> python
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="memorandum.html">備忘録</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">コーディング規約</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">コードのレイアウト</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">インデント</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">1行の長さ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">二項演算子の改行</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">空行</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#import">import文</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">引用符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">式や文中の空白文字</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id9">命名規則</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id10">パッケージとモジュールの名前</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11">クラスの名前</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12">関数や変数の名前</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">定数</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">python</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>コーディング規約</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/python_style.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>コーディング規約<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p><a class="reference external" href="https://pep8-ja.readthedocs.io/ja/latest/">PEP8の日本語ドキュメント</a></p>
+<div class="section" id="id2">
+<h2>コードのレイアウト<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="id3">
+<h3>インデント<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>1レベルインデントするごとに、<font color="Red">スペースを4つ</font>使う。<br />行を継続する場合は、折り返された要素を縦に揃える。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 開き括弧に揃える</span>
+<span class="n">foo</span> <span class="o">=</span> <span class="n">test_function</span><span class="p">(</span><span class="n">var1</span><span class="p">,</span> <span class="n">var2</span><span class="p">,</span> <span class="n">var3</span><span class="p">,</span>
+                    <span class="n">var4</span><span class="p">,</span> <span class="n">var5</span><span class="p">,</span> <span class="n">var6</span><span class="p">)</span>
+
+<span class="c1"># 開き括弧で改行する場合は、1インデント入れて揃える</span>
+<span class="n">foo</span> <span class="o">=</span> <span class="n">test_function</span><span class="p">(</span>
+    <span class="n">var1</span><span class="p">,</span> <span class="n">var2</span><span class="p">,</span> <span class="n">var3</span><span class="p">,</span>
+    <span class="n">var4</span><span class="p">,</span> <span class="n">var5</span><span class="p">,</span> <span class="n">var6</span><span class="p">)</span>
+
+<span class="c1"># 引数とそれ以外を区別するため、スペースを4つ加える</span>
+<span class="k">def</span> <span class="nf">foo</span> <span class="o">=</span> <span class="n">long_long_long_function</span><span class="p">(</span>
+        <span class="n">var1</span><span class="p">,</span> <span class="n">var2</span><span class="p">,</span> <span class="n">var3</span><span class="p">,</span>
+        <span class="n">var4</span><span class="p">,</span> <span class="n">var5</span><span class="p">,</span> <span class="n">var6</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">var3</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>if文のときは、コメントを入れる、または継続された行の条件をインデントする。<br />(前者はコメントを必ず挿入する必要があるので後者で揃えた方がおそらく良い)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># コメントを挿入して条件とそれ以外を区別する</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">condition1</span> <span class="ow">and</span>
+    <span class="n">condition2</span><span class="p">):</span>
+    <span class="c1"># コメント</span>
+    <span class="n">do_something</span><span class="p">()</span>
+
+<span class="c1"># 継続された行の条件をインデントする</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">condition1</span>
+        <span class="ow">and</span> <span class="n">condition2</span><span class="p">)</span>
+    <span class="n">do_something</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>行を継続して波括弧、ブランケット、括弧を閉じるときの記号はインデントがあってもなくても良い。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 「リストの最後の要素が置かれた行の、はじめの文字の直下」に閉じる記号を置く</span>
+<span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span>
+    <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span>
+    <span class="p">]</span>
+
+<span class="c1"># 「継続された行のはじめの文字」に合わせて閉じる記号を置く</span>
+<span class="n">my_lsit</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span>
+    <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>1行の長さ<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>行の長さは、<font color="Red">最大79文字</font>までに制限する。(docstringやコメントは72文字)<br />途中で改行するとシンタックスエラーになる場合は、バックスラッシュを使うことで複数行に分割できる。<br />バックスラッシュを使うのが好ましいケースはwith文やassert文などがある。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/path/to/some/file/test1&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file1</span><span class="p">,</span> \
+     <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;/path/to/some/file/test2&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file2</span><span class="p">:</span>
+    <span class="n">file2</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">file1</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>二項演算子の改行<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>二項演算子を使用している行を分割する場合、演算子の前で改行する。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 演算子の前で改行する</span>
+<span class="n">income</span> <span class="o">=</span> <span class="p">(</span><span class="n">gross_wages</span>
+          <span class="o">+</span> <span class="n">taxable_interest</span>
+          <span class="o">+</span> <span class="p">(</span><span class="n">dividends</span> <span class="o">-</span> <span class="n">qualified_dividends</span><span class="p">)</span>
+          <span class="o">-</span> <span class="n">ira_deduction</span>
+          <span class="o">-</span> <span class="n">student_loan_interest</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>空行<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>トップレベルの関数やクラスは2行ずつ空けて定義する。<br />クラス内部では、1行ずつ空けてメソッドを定義する。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_func1</span><span class="p">():</span>
+    <span class="k">pass</span>
+
+
+<span class="k">def</span> <span class="nf">test_func2</span><span class="p">():</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">TestClass</span><span class="p">():</span>
+
+    <span class="k">def</span> <span class="nf">__init</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">test_func3</span><span class="p">():</span>
+        <span class="n">passe</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="import">
+<h3>import文<a class="headerlink" href="#import" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>import文は、行を分ける。from文を使用するときは、行を分けない。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ダメな例(行を分けていない)</span>
+<span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">os</span>
+
+<span class="c1"># 良い例(行を分けている)</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="c1"># from文は例外</span>
+<span class="kn">from</span> <span class="nn">subprocess</span> <span class="kn">import</span> <span class="n">Popen</span><span class="p">,</span> <span class="n">PIPE</span>
+</pre></div>
+</div>
+<p>import文は次の順番でグループ化し、グループの間には1行空白を入れる</p>
+<ol class="simple">
+<li><p>標準ライブラリ</p></li>
+<li><p>サードパーティに関連するもの</p></li>
+<li><p>ローカルなアプリケーション/ライブラリに特有のもの</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">import</span> <span class="nn">custom_util</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h3>引用符<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>単一引用符(')か二重引用符(&quot;)を使うかプロジェクトで決める。<br />三重引用符で文字列を囲むときは、常に二重引用符(&quot;&quot;&quot;)を使う。</p>
+</div>
+<div class="section" id="id8">
+<h3>式や文中の空白文字<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>次の場合は、余計な空白文字を使わない。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 括弧やブランケット、波括弧の初めの直後と終わりの直前</span>
+<span class="c1"># OK</span>
+<span class="n">spam</span><span class="p">(</span><span class="n">ham</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">{</span><span class="n">eggs</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span>
+<span class="c1"># NG</span>
+<span class="n">spam</span><span class="p">(</span> <span class="n">ham</span><span class="p">[</span> <span class="mi">1</span> <span class="p">],</span> <span class="p">{</span> <span class="n">eggs</span><span class="p">:</span> <span class="mi">2</span> <span class="p">}</span> <span class="p">)</span>
+
+<span class="c1"># 末尾のカンマとその後に続く閉じ括弧の間</span>
+<span class="c1"># OK</span>
+<span class="n">foo</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,)</span>
+<span class="c1"># NG</span>
+<span class="n">bar</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">)</span>
+
+<span class="c1"># カンマやセミコロン、コロンの直前</span>
+<span class="c1"># OK</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span> <span class="nb">print</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">;</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span>
+<span class="c1"># NG</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">4</span> <span class="p">:</span> <span class="nb">print</span> <span class="n">x</span> <span class="p">,</span> <span class="n">y</span> <span class="p">;</span> <span class="n">x</span> <span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="p">,</span> <span class="n">x</span>
+
+<span class="c1"># 関数呼び出しの引数リストをはじめる開き括弧の直前</span>
+<span class="c1"># OK</span>
+<span class="n">spam</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># NG</span>
+<span class="n">spam</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># インデックスやスライスの開き括弧の直前</span>
+<span class="c1"># OK</span>
+<span class="n">dct</span><span class="p">[</span><span class="s1">&#39;key&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">lst</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+<span class="c1"># NG</span>
+<span class="n">dct</span> <span class="p">[</span><span class="s1">&#39;key&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">lst</span> <span class="p">[</span><span class="n">index</span><span class="p">]</span>
+
+<span class="c1"># 代入(や他の)演算子を揃えるために、演算子の周囲に1つ以上のスペースを入れる</span>
+<span class="c1"># OK</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">long_variable</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="c1"># NG</span>
+<span class="n">x</span>             <span class="o">=</span> <span class="mi">1</span>
+<span class="n">y</span>             <span class="o">=</span> <span class="mi">2</span>
+<span class="n">long_variable</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<p>スライスではコロンは二項演算子のように振舞うので同じ数のスペースを置く。<br />拡張スライスでは、両側に同じ数のスペースを置く。<br />スライスのパラメータが省略された場合は例外でスペースも省略する。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ham</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">9</span><span class="p">],</span> <span class="n">ham</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">9</span><span class="p">:</span><span class="mi">3</span><span class="p">],</span> <span class="n">ham</span><span class="p">[:</span><span class="mi">9</span><span class="p">:</span><span class="mi">3</span><span class="p">],</span> <span class="n">ham</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">3</span><span class="p">],</span> <span class="n">ham</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">9</span><span class="p">:]</span>
+<span class="n">ham</span><span class="p">[</span><span class="n">lower</span><span class="p">:</span><span class="n">upper</span><span class="p">],</span> <span class="n">ham</span><span class="p">[</span><span class="n">lower</span><span class="p">:</span><span class="n">upper</span><span class="p">:],</span> <span class="n">ham</span><span class="p">[</span><span class="n">lower</span><span class="p">::</span><span class="n">step</span><span class="p">]</span>
+<span class="n">ham</span><span class="p">[</span><span class="n">lower</span><span class="o">+</span><span class="n">offset</span> <span class="p">:</span> <span class="n">upper</span><span class="o">+</span><span class="n">offset</span><span class="p">]</span>
+<span class="n">ham</span><span class="p">[:</span> <span class="n">upper_fn</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">:</span> <span class="n">step_fn</span><span class="p">(</span><span class="n">x</span><span class="p">)],</span> <span class="n">ham</span><span class="p">[::</span> <span class="n">step_fn</span><span class="p">(</span><span class="n">x</span><span class="p">)]</span>
+<span class="n">ham</span><span class="p">[</span><span class="n">lower</span> <span class="o">+</span> <span class="n">offset</span> <span class="p">:</span> <span class="n">upper</span> <span class="o">+</span> <span class="n">offset</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>命名規則<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="id10">
+<h3>パッケージとモジュールの名前<a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>モジュール名は、すべて小文字の短い名前にする。<br />読みやすくなるならアンダースコア使用していいが、推奨しない。</p>
+</div>
+<div class="section" id="id11">
+<h3>クラスの名前<a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>CapWords方式を使う。<br />最初の1文字は大文字で、その後はキャメルケースを使用する。<br />(例)TestClass</p>
+</div>
+<div class="section" id="id12">
+<h3>関数や変数の名前<a class="headerlink" href="#id12" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>小文字のみ使用する。必要に応じて単語をアンダースコアで区切る。<br />(例)test_func</p>
+</div>
+<div class="section" id="id13">
+<h3>定数<a class="headerlink" href="#id13" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>大文字のみ使用する。単語をアンダースコアで区切る。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="memorandum.html" class="btn btn-neutral float-left" title="備忘録" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 著作権 2020, shirox64
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

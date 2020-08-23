@@ -1,0 +1,773 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>NumPy &mdash; python 1.0.0 ドキュメント</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="検索" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> python
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="memorandum.html">備忘録</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_style.html">コーディング規約</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">python</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>NumPy</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/numpy.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="numpy">
+<h1>NumPy<a class="headerlink" href="#numpy" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="id1">
+<h2>NumPyとは<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>NumPyは科学技術計算に特化したサードパーティ製パッケージで配列や行列を効率よく扱える。</p>
+</div>
+<div class="section" id="id2">
+<h2>インポート<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># NumPyのインポート</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>1次元配列<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1次元配列作成</span>
+<span class="n">array_1d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+
+<span class="n">array_1d</span>
+<span class="c1"># array([1, 2, 3])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">array_1d</span><span class="p">)</span>
+<span class="c1"># [1, 2, 3]</span>
+
+<span class="nb">type</span><span class="p">(</span><span class="n">array_1d</span><span class="p">)</span>
+<span class="c1"># numpy.ndarray</span>
+
+<span class="n">array_1d</span><span class="o">.</span><span class="n">shape</span>
+<span class="c1"># (3,)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>2次元配列<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2次元配列作成</span>
+<span class="n">array_2d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
+
+<span class="n">array_2d</span>
+<span class="c1"># array([[1, 2, 3],</span>
+<span class="c1">#        [4, 5, 6]])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">array_2d</span><span class="p">)</span>
+<span class="c1"># [[1, 2, 3]</span>
+<span class="c1">#  [4, 5, 6]]</span>
+
+<span class="n">array_2d</span><span class="o">.</span><span class="n">shape</span>
+<span class="c1"># (2, 3)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>変形<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">array1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+<span class="n">array1</span>
+<span class="c1"># array([1, 2, 3, 4, 5, 6])</span>
+
+<span class="c1"># 1次元配列を2次元配列に変形</span>
+<span class="n">array2</span> <span class="o">=</span> <span class="n">array1</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">array2</span>
+<span class="c1"># array([[1, 2, 3],</span>
+<span class="c1">#        [4, 5, 6]])</span>
+
+<span class="c1"># 変形する要素数が合わない場合は、エラーになる</span>
+<span class="n">array3</span> <span class="o">=</span> <span class="n">array1</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="c1"># ValueError: cannot reshape array of size 6 into shape (3,4)</span>
+
+<span class="c1"># 1次元配列に戻す *参照を渡す</span>
+<span class="n">array4</span> <span class="o">=</span> <span class="n">array2</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+<span class="n">array4</span>
+<span class="c1"># array([1, 2, 3, 4, 5, 6])</span>
+
+<span class="c1"># 1次元配列に戻す *コピーを返す</span>
+<span class="n">array5</span> <span class="o">=</span> <span class="n">array2</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+<span class="c1"># array([1, 2, 3, 4, 5, 6])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>データ型<a class="headerlink" href="#id6" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="id7">
+<h3>データ型一覧<a class="headerlink" href="#id7" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>下記の表は、numpyのデータ型の一覧です。</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th align="left">データ型</th>
+<th align="center">型コード</th>
+<th align="left">説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">int8</td>
+<td align="center">i1</td>
+<td align="left">符号あり8ビット整数型</td>
+</tr>
+<tr>
+<td align="left">int16</td>
+<td align="center">i2</td>
+<td align="left">符号あり16ビット整数型</td>
+</tr>
+<tr>
+<td align="left">int32</td>
+<td align="center">i4</td>
+<td align="left">符号あり32ビット整数型</td>
+</tr>
+<tr>
+<td align="left">int64</td>
+<td align="center">i8</td>
+<td align="left">符号あり64ビット整数型</td>
+</tr>
+<tr>
+<td align="left">uint8</td>
+<td align="center">u1</td>
+<td align="left">符号なし8ビット整数型</td>
+</tr>
+<tr>
+<td align="left">uint16</td>
+<td align="center">u2</td>
+<td align="left">符号なし16ビット整数型</td>
+</tr>
+<tr>
+<td align="left">uint32</td>
+<td align="center">u4</td>
+<td align="left">符号なし32ビット整数型</td>
+</tr>
+<tr>
+<td align="left">uint64</td>
+<td align="center">u8</td>
+<td align="left">符号なし64ビット整数型</td>
+</tr>
+<tr>
+<td align="left">float16</td>
+<td align="center">f2</td>
+<td align="left">半精度浮動小数点型（符号部1ビット、指数部5ビット、仮数部10ビット）</td>
+</tr>
+<tr>
+<td align="left">float32</td>
+<td align="center">f4</td>
+<td align="left">単精度浮動小数点型（符号部1ビット、指数部8ビット、仮数部23ビット）</td>
+</tr>
+<tr>
+<td align="left">float64</td>
+<td align="center">f8</td>
+<td align="left">倍精度浮動小数点型（符号部1ビット、指数部11ビット、仮数部52ビット）</td>
+</tr>
+<tr>
+<td align="left">float128</td>
+<td align="center">f16</td>
+<td align="left">四倍精度浮動小数点型（符号部1ビット、指数部15ビット、仮数部112ビット）</td>
+</tr>
+<tr>
+<td align="left">complex64</td>
+<td align="center">c8</td>
+<td align="left">複素数（実部・虚部がそれぞれfloat32）</td>
+</tr>
+<tr>
+<td align="left">complex128</td>
+<td align="center">c16</td>
+<td align="left">複素数（実部・虚部がそれぞれfloat64）</td>
+</tr>
+<tr>
+<td align="left">complex256</td>
+<td align="center">c32</td>
+<td align="left">複素数（実部・虚部がそれぞれfloat128）</td>
+</tr>
+<tr>
+<td align="left">bool</td>
+<td align="center">?</td>
+<td align="left">ブール型（True or False）</td>
+</tr>
+<tr>
+<td align="left">unicode</td>
+<td align="center">U</td>
+<td align="left">Unicode文字列</td>
+</tr>
+<tr>
+<td align="left">object</td>
+<td align="center">O</td>
+<td align="left">Pythonオブジェクト型</td>
+</tr>
+</tbody>
+</table></div>
+<div class="section" id="id8">
+<h3>データ型の指定<a class="headerlink" href="#id8" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># データ型を指定しない場合は、自動で設定される</span>
+<span class="n">array1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">array1</span><span class="o">.</span><span class="n">dtype</span>
+<span class="c1"># dtype(&#39;int32&#39;)</span>
+
+<span class="c1"># データ型を指定は、下記の3パターンがあります</span>
+<span class="c1"># 1. np.int16</span>
+<span class="n">array2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int16</span><span class="p">)</span>
+<span class="c1"># 2. 文字列&#39;int16&#39;</span>
+<span class="n">array2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;int16&#39;</span><span class="p">)</span>
+<span class="c1"># 3. 型コードの文字列&#39;i2&#39;</span>
+<span class="n">array2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;i2&#39;</span><span class="p">)</span>
+
+<span class="n">array2</span><span class="o">.</span><span class="n">dtype</span>
+<span class="c1"># dtype(&#39;int16&#39;)</span>
+
+<span class="c1"># 配列作成後にデータ型を変更</span>
+<span class="n">array2</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float16</span><span class="p">)</span>
+<span class="c1"># array([1, 2, 3], dtype=float16)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>インデックスとスライス<a class="headerlink" href="#id9" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">array1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">array1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="c1"># 1</span>
+<span class="n">array1</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="c1"># array([2, 3])</span>
+<span class="n">array1</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="c1"># 3</span>
+
+<span class="n">array2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
+<span class="n">array2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="c1"># array([1, 2, 3])</span>
+<span class="n">array2</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="c1"># 4</span>
+<span class="n">array2</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="c1"># array([3, 6])</span>
+<span class="n">array2</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
+<span class="c1"># array([4, 5, 6])</span>
+<span class="n">array2</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">:]</span>
+<span class="c1"># array([2, 3])</span>
+<span class="n">arary2</span><span class="p">[:,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
+<span class="c1"># array([[1, 3],</span>
+<span class="c1">#        [4, 6]])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id10">
+<h2>データ再代入<a class="headerlink" href="#id10" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">array1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">array1</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">array1</span>
+<span class="c1"># array([1, 2, 4])</span>
+
+<span class="n">array2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
+<span class="n">array2</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">array2</span>
+<span class="c1"># array([[1, 2, 3],</span>
+<span class="c1">#        [4, 5, 7]])</span>
+
+<span class="n">array2</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">array2</span>
+<span class="c1"># array([[1, 2, 8],</span>
+<span class="c1">#        [4, 5, 8]])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="copy">
+<h2>深いコピー(copy)<a class="headerlink" href="#copy" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>コピーには浅いコピーと深いコピーがあるのでしっかり理解する必要があります。
+特にPython標準のリストではスライスした結果はコピーが渡されますが、NumPyではスライスした結果は参照が渡されるので注意。</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">a1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="c1"># array([[1, 2, 3],</span>
+<span class="c1">#        [4, 5, 6],</span>
+<span class="c1">#        [7, 8, 9]])</span>
+
+<span class="c1"># 浅いコピー</span>
+<span class="n">b1</span> <span class="o">=</span> <span class="n">a1</span>
+<span class="c1"># b1とa1の参照先が同じなのでb1を変更するとa1も変わる</span>
+<span class="n">b1</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="n">b1</span>
+<span class="c1"># array([[1, 2, 9],</span>
+<span class="c1">#        [4, 5, 9],</span>
+<span class="c1">#        [7, 8, 9]])</span>
+<span class="n">a1</span>
+<span class="c1"># array([[1, 2, 9],</span>
+<span class="c1">#        [4, 5, 9],</span>
+<span class="c1">#        [7, 8, 9]])</span>
+
+<span class="c1"># 深いコピー</span>
+<span class="n">b1</span> <span class="o">=</span> <span class="n">a1</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="c1"># b1には新しいオブジェクトが作成されているので変更してもa1に影響はない</span>
+<span class="n">b1</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="n">b1</span>
+<span class="c1"># array([[1, 2, 9],</span>
+<span class="c1">#        [4, 5, 9],</span>
+<span class="c1">#        [7, 8, 9]])</span>
+<span class="n">a1</span>
+<span class="c1"># array([[1, 2, 3],</span>
+<span class="c1">#        [4, 5, 6],</span>
+<span class="c1">#        [7, 8, 9]])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id11">
+<h2>数列を返す<a class="headerlink" href="#id11" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="c1"># array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+<span class="c1"># array([1, 2, 3, 4, 5, 6])</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c1"># array([1, 3, 5])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id12">
+<h2>配列の結合<a class="headerlink" href="#id12" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="id13">
+<h3>水平方向に結合<a class="headerlink" href="#id13" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>水平方向に結合するには、np.hstack()またはnp.concatenate()関数を使用します。</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">a1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c1"># array([[0, 1],</span>
+<span class="c1">#        [2, 3]])</span>
+
+<span class="n">a2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c1"># array([[4, 5],</span>
+<span class="c1">#        [6, 7]])</span>
+
+<span class="n">a3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">a1</span><span class="p">,</span> <span class="n">a2</span><span class="p">))</span>
+<span class="c1"># array([[0, 1, 4, 5],</span>
+<span class="c1">#        [2, 3, 6, 7]])</span>
+
+<span class="n">a4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">a1</span><span class="p">,</span> <span class="n">a2</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># array([[0, 1, 4, 5],</span>
+<span class="c1">#        [2, 3, 6, 7]])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id14">
+<h3>垂直方向に結合<a class="headerlink" href="#id14" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>垂直方向に結合するには、np.vstack()またはnp.concatenate()関数を使用します。</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">a1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c1"># array([[0, 1],</span>
+<span class="c1">#        [2, 3]])</span>
+
+<span class="n">a2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c1"># array([[4, 5],</span>
+<span class="c1">#        [6, 7]])</span>
+
+<span class="n">a3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">((</span><span class="n">a1</span><span class="p">,</span> <span class="n">a2</span><span class="p">))</span>
+<span class="c1"># array([[0, 1],</span>
+<span class="c1">#        [2, 3],</span>
+<span class="c1">#        [4, 5],</span>
+<span class="c1">#        [6, 7]])</span>
+
+<span class="n">a4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">a1</span><span class="p">,</span> <span class="n">a2</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="c1"># array([[0, 1],</span>
+<span class="c1">#        [2, 3],</span>
+<span class="c1">#        [4, 5],</span>
+<span class="c1">#        [6, 7]])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id15">
+<h3>奥行き方向に結合<a class="headerlink" href="#id15" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>奥行き方向に結合するには、np.dstack()関数を使用します。</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">a1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c1"># array([[0, 1],</span>
+<span class="c1">#        [2, 3]])</span>
+
+<span class="n">a2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c1"># array([[4, 5],</span>
+<span class="c1">#        [6, 7]])</span>
+
+<span class="n">a3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dstack</span><span class="p">((</span><span class="n">a1</span><span class="p">,</span> <span class="n">a2</span><span class="p">))</span>
+<span class="c1"># array([[[0, 4],</span>
+<span class="c1">#         [1, 5]],</span>
+<span class="c1">#        [[2, 6],</span>
+<span class="c1">#         [3, 7]]])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id16">
+<h3>新しい列として結合<a class="headerlink" href="#id16" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>np.column_stack()関数を使用して、1次元の配列を新しい列として結合することができます。</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">a1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+<span class="c1"># array([[0, 3],</span>
+<span class="c1">#        [1, 4],</span>
+<span class="c1">#        [2, 5]])</span>
+
+<span class="n">a2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="c1"># array([6, 7, 8])</span>
+
+<span class="n">a3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">((</span><span class="n">a1</span><span class="p">,</span> <span class="n">a2</span><span class="p">))</span>
+<span class="c1"># array([[0, 3, 6],</span>
+<span class="c1">#        [1, 4, 7],</span>
+<span class="c1">#        [2, 5, 8]])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id17">
+<h3>新しい行として結合<a class="headerlink" href="#id17" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>np.row_stack()関数を使用して、1次元の配列を新しい行として結合することができます。</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">a1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="c1"># array([[0, 1],</span>
+<span class="c1">#        [2, 3],</span>
+<span class="c1">#        [4, 5]])</span>
+
+<span class="n">a2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
+<span class="c1"># array([6, 7])</span>
+
+<span class="n">a3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">row_stack</span><span class="p">((</span><span class="n">a1</span><span class="p">,</span> <span class="n">a2</span><span class="p">))</span>
+<span class="c1"># array([[0, 1],</span>
+<span class="c1">#        [2, 3],</span>
+<span class="c1">#        [4, 5],</span>
+<span class="c1">#        [6, 7]])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id18">
+<h2>統計関数<a class="headerlink" href="#id18" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="id19">
+<h3>和<a class="headerlink" href="#id19" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>sum()関数はそれぞれ、配列の要素の和を計算します。
+引数に何も指定していない場合は、全ての要素に対して演算が適用されます。
+各列の合計を求めるためにはaxis=0を、各行の合計を求めるためにaxis=1を指定します。</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">a1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="c1"># array([1, 2, 3, 4, 5])</span>
+
+<span class="n">a2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="c1"># array([[1, 2, 3],</span>
+<span class="c1">#        [4, 5, 6],</span>
+<span class="c1">#        [7, 8, 9]])</span>
+
+<span class="n">a1</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span> <span class="n">a2</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="c1"># (15, 45)</span>
+
+<span class="n">a2</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="c1"># array([12, 15, 18])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id20">
+<h3>積<a class="headerlink" href="#id20" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>prod()関数は、配列の要素の積を計算します。引数はsumと同様です。</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">a1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="c1"># array([1, 2, 3, 4, 5])</span>
+
+<span class="n">a2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="c1"># array([[1, 2, 3],</span>
+<span class="c1">#        [4, 5, 6],</span>
+<span class="c1">#        [7, 8, 9]])</span>
+
+<span class="n">a1</span><span class="o">.</span><span class="n">prod</span><span class="p">(),</span> <span class="n">a2</span><span class="o">.</span><span class="n">prod</span><span class="p">()</span>
+<span class="c1"># (120, 362880)</span>
+
+<span class="n">a2</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># array([6, 120, 504])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id21">
+<h3>累積和<a class="headerlink" href="#id21" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>累積和を求めるには、cumsum()関数を使用します。</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">a1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="c1"># array([1, 2, 3, 4, 5])</span>
+
+<span class="n">a1</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
+<span class="c1"># array([ 1,  3,  6, 10, 15])</span>
+
+<span class="n">a2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="c1"># array([[1, 2, 3],</span>
+<span class="c1">#        [4, 5, 6],</span>
+<span class="c1">#        [7, 8, 9]])</span>
+
+<span class="n">a2</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
+<span class="c1"># array([ 1,  3,  6, 10, 15, 21, 28, 36, 45])</span>
+
+<span class="n">a2</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="c1"># array([[ 1,  2,  3],</span>
+<span class="c1">#        [ 5,  7,  9],</span>
+<span class="c1">#        [12, 15, 18]])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id22">
+<h3>累積積<a class="headerlink" href="#id22" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>累積積を求めるには、cumprod()関数を使用します。</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">a1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="c1"># array([1, 2, 3, 4, 5])</span>
+
+<span class="n">a1</span><span class="o">.</span><span class="n">cumprod</span><span class="p">()</span>
+<span class="c1"># array([  1,   2,   6,  24, 120])</span>
+
+<span class="n">a2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="c1"># array([[1, 2, 3],</span>
+<span class="c1">#        [4, 5, 6],</span>
+<span class="c1">#        [7, 8, 9]])</span>
+
+<span class="n">a2</span><span class="o">.</span><span class="n">cumprod</span><span class="p">()</span>
+<span class="c1"># array([     1,      2,      6,     24,    120,    720,   5040,  40320,</span>
+<span class="c1">#        362880])</span>
+
+<span class="n">a2</span><span class="o">.</span><span class="n">cumprod</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># array([[  1,   2,   6],</span>
+<span class="c1">#        [  4,  20, 120],</span>
+<span class="c1">#        [  7,  56, 504]])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id23">
+<h3>平均<a class="headerlink" href="#id23" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>平均を求めるには、mean()関数を使用します。</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">a2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="c1"># array([[1, 2, 3],</span>
+<span class="c1">#        [4, 5, 6],</span>
+<span class="c1">#        [7, 8, 9]])</span>
+
+<span class="n">a2</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># array([2., 5., 8.])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id24">
+<h3>標準偏差<a class="headerlink" href="#id24" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>標準偏差を求めるには、std()関数を使用します。</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">a2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="c1"># array([[1, 2, 3],</span>
+<span class="c1">#        [4, 5, 6],</span>
+<span class="c1">#        [7, 8, 9]])</span>
+
+<span class="n">a2</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># array([0.81649658, 0.81649658, 0.81649658])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id25">
+<h3>分散<a class="headerlink" href="#id25" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>分散を求めるには、var()関数を使用します。</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">a2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="c1"># array([[1, 2, 3],</span>
+<span class="c1">#        [4, 5, 6],</span>
+<span class="c1">#        [7, 8, 9]])</span>
+
+<span class="n">a2</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># array([0.66666667, 0.66666667, 0.66666667])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id26">
+<h3>最小<a class="headerlink" href="#id26" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">a2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="c1"># array([[1, 2, 3],</span>
+<span class="c1">#        [4, 5, 6],</span>
+<span class="c1">#        [7, 8, 9]])</span>
+
+<span class="n">a2</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="c1"># 1</span>
+
+<span class="n">a2</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># array([1, 4, 7])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id27">
+<h3>最大<a class="headerlink" href="#id27" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">a2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="c1"># array([[1, 2, 3],</span>
+<span class="c1">#        [4, 5, 6],</span>
+<span class="c1">#        [7, 8, 9]])</span>
+
+<span class="n">a2</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="c1"># 9</span>
+
+<span class="n">a2</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># array([3, 6, 9])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 著作権 2020, shirox64
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
